@@ -11,7 +11,7 @@ trap 'echo "SIGINT called, exiting"' SIGINT
 echo="Running..."
 (
 while [ 1 ] ; do
-    ${image_cmd} "${image_dir}/$(date +%H-%M-%S).jpeg"; 
+    ${image_cmd} "${image_dir}/$(date +%H-%M-%S).jpg"; 
     sleep 2;
 done
 )
