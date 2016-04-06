@@ -1,39 +1,17 @@
-#!/bin/bash
+#!/bin/sh
 
-path="/home/nastet/Desktop/wpic";
-DATE=`date +%Y-%m-%d`
-#echo date +'%m/%d/%Y';
+image_dir="/home/nastet/Desktop/wpic/$(date +%Y-%m-%d)"
+image_cmd="$(which fswebcam) --quiet --set brightness=80% --no-banner"
 
 #Creating file hierarchy
-if ! [ -d "$path/$DATE" ]; then
-  echo "Creating folder"
-  mkdir "$path/$DATE"
-else 
-  echo "Date folder exists"
-fi
+mkdir -p "${image_dir}"
 
 trap 'echo "SIGINT called, exiting"' SIGINT
 
-
-run=true
-echo="running..."
-(while [ run=true ]
-do
- 
-  time=`date +%H-%M-%S`
-  fswebcam --quiet --set brightness=100% --no-banner $path/$DATE/$time.jpeg; 
-  sleep 2;
-done) 
-
-
-
-
-
-
-
-
-#fswebcam --quiet 
-
-
-
-
+echo="Running..."
+(
+while [ 1 ] ; do
+    ${image_cmd} "${image_dir}/$(date +%H-%M-%S).jpeg"; 
+    sleep 2;
+done
+)
