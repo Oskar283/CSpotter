@@ -1,0 +1,39 @@
+#!/bin/bash
+
+path="/home/nastet/Desktop/wpic";
+DATE=`date +%Y-%m-%d`
+#echo date +'%m/%d/%Y';
+
+#Creating file hierarchy
+if ! [ -d "$path/$DATE" ]; then
+  echo "Creating folder"
+  mkdir "$path/$DATE"
+else 
+  echo "Date folder exists"
+fi
+
+trap 'echo "SIGINT called, exiting"' SIGINT
+
+
+run=true
+echo="running..."
+(while [ run=true ]
+do
+ 
+  time=`date +%H-%M-%S`
+  fswebcam --quiet --set brightness=100% --no-banner $path/$DATE/$time.jpeg; 
+  sleep 2;
+done) 
+
+
+
+
+
+
+
+
+#fswebcam --quiet 
+
+
+
+
