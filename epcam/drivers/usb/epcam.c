@@ -1842,7 +1842,7 @@ static struct v4l2_file_operations epcam_fops = {
 	.release =	epcam_close,
 	.read =		epcam_read,
 	.mmap =		epcam_v4l2_mmap,
-	.ioctl =	epcam_ioctl,
+	.unlocked_ioctl =	epcam_ioctl, /* Kan vara fel */
 #if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,29)
 #ifdef CONFIG_COMPAT
 	.compat_ioctl = v4l_compat_ioctl32,
