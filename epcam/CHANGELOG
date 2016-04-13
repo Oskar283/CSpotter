@@ -1,0 +1,67 @@
+1.4.1 2015-03-21  Djordje Stanarevic <dstanarevic@yahoo.com>
+       * Made changes required by kernel 3.x.x
+1.3.2 2011-03-11  Djordje Stanarevic <dstanarevic@yahoo.com>
+       * Page aligned frame buffers to get the driver working with mplayer.
+       * Modified default values for red,blue,green balance.
+1.3.1 2011-02-08  Djordje Stanarevic <dstanarevic@yahoo.com>
+       * Modified default values for red,blue,green balance and exposure.
+       * Implemented pixel bias voltage control.
+1.3.0 2011-01-15  Djordje Stanarevic <dstanarevic@yahoo.com>
+       * implemented native HV7121b image sensor color gain controls
+       * tested with cheese,ekiga,amsn,empathy,pidgin,vlc,skype,ucview,v4l2ucp,camorama,emesene,zoneminder,motion,qyache
+1.2.0 2010-12-24  Djordje Stanarevic <dstanarevic@yahoo.com>
+       * implemented memory mapping i/o
+       * implemented input device for snapshot button (gizmo daemon support)
+       * tested with cheese,ekiga,amsn,empathy,pidgin,vlc,skype,ucview,v4l2ucp
+1.1.0 2010-10-16  Djordje Stanarevic <dstanarevic@yahoo.com>
+       * added temporary fix for left side
+       * cleaned up compilation warnings
+       * enabled max frame size suppored by camera (400x300 pix)
+1.0.0 2010-10-02  Djordje Stanarevic <dstanarevic@yahoo.com>
+       * removed V4L1 support and changed pix format to GBRG.
+       * works only with applications that fully support V4L2
+0.9.2 2009-12-31  Djordje Stanarevic <dstanarevic@yahoo.com>
+       * modified VIDIOC_TRY_FMT handling to make ekiga work properly.
+       * ekiga has a bug that makes it crash when "Display images from
+       * your camera" button is enabled 
+0.9.1 2009-11-22  Djordje Stanarevic <dstanarevic@yahoo.com> 
+       * Implemented VIDIOC_ENUM_FRAMESIZES ioctl according to  V4L2
+       * specification.Camera should now  work with skype and ekiga
+       * although RGB24 to YU12 colorspace conversion in libv4lconvert.so works
+       * well only for the half of the captured image frame !??
+0.9.0 2009-11-21, Djordje Stanarevic <dstanarevic@yahoo.com>
+       * Implemented changes introduced to kernel since version 2.6.27
+       * Implemented V4L2 support , works well with camorama and amsn
+0.8.4 2008-12-31, Djordje Stanarevic <dstanarevic@yahoo.com>
+       * Applied changes introduced to kernel 2.6.27 for v4l
+0.8.3 2008-06-08, Djordje Stanarevic <dstanarevic@yahoo.com>
+       * Re-enabled frame capturing with epcam_read.Modified
+         README,INSTALL and Makefile
+0.8.2 2008-04-09, Djordje Stanarevic <dstanarevic@yahoo.com>
+       * Added sysfs support for 2.6.23 kernel and older
+
+0.8.1 2008-04-07, Djordje Stanarevic <dstanarevic@yahoo.com>
+	* Modified initial Jeroen's code. Made lots of improvements.
+	  http://ubuntuforums.org/showpost.php?p=4674587&postcount=57
+	* (NT: svn) added README info from ubuntuforums (see above)
+
+0.7.3 .........., Fabio Mauro (?)
+	* More modifications for kernel version compatibility, reporting success in 
+	  "Ubuntu 7.04 on a 2.6.20 kernel, but the FPS is about 0.5"
+	  http://ubuntuforums.org/showpost.php?p=2626919&postcount=29
+	* Added EndPoints EP800 docs
+	* According to the diff, this revision has received patches from Antoine DEBOURG
+
+0.7.2 .........., Fabio Mauro (?)
+	* Modifications by Favio Mauro (?) to compile under Ubuntu Edgy Eft
+	* (NT: svn) added INSTALL with simple instructions, copied from:
+	  http://ubuntuforums.org/showpost.php?p=1932186&postcount=19
+
+0.7.1 2006-..-.., Fabio Mauro
+	* Modifications by Fabio Mauro to allow compiling under Ubuntu
+
+0.7.0 2004-12-04, Nuno Tavares <nunotavares@hotmail.com>
+	* Initial release, just an independent module tree 
+	  based on the 2.6.1-rxq3 patch from Jeroen:
+	  http://members.brabant.chello.nl/~j.vreeken/se401/
+

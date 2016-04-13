@@ -1,18 +1,11 @@
-import pygame
+#!/usr/bin/env python
+
 import pygame.camera
-from pygame.locals import *
-from PIL import Image
+import pygame.image
 
-pygame.init()
 pygame.camera.init()
-w = 640
-h = 480
-size=(w,h)
-screen = pygame.display.set_mode(size)
-
-cam = pygame.camera.Camera("/dev/video0",(640,480))
+cam = pygame.camera.Camera(pygame.camera.list_cameras()[0])
 cam.start()
-image = cam.get_image()
-
-screen.blit(image,(0,0))
-pygame.display.flip()
+img = cam.get_image()
+pygame.image.save(img, "photo.bmp")
+pygame.camera.quit()

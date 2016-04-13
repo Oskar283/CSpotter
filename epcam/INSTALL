@@ -1,0 +1,21 @@
+To install epcam linux driver follow this:
+
+1. Download the source files that are included in epcam-src-<version>.tar.gz
+2. Open a terminal
+3. Go the directory where you downloaded epcam-src-<version>.tar.gz
+4. Make sure you have kernel development packages installed, otherwise you won't be able to build the driver from source files.
+5. Type in your terminal each of the following commands:
+
+	tar xfvz epcam-src-<version>.tar.gz
+	make
+	sudo make install
+	sudo modprobe epcam
+
+To uninstall the driver:
+
+	sudo rmmod epcam
+	sudo make uninstall
+
+To clean up files created during the build:
+
+	make clean
